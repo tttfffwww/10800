@@ -1,12 +1,12 @@
 /*
-大牌联合  狂欢抢先GO
-10-23 ~ 10~29
-https://lzdz1-isv.isvjcloud.com/dingzhi/dz/openCard/activity?activityId=dz20211023wkcn14cn5cnd0sdbs5sbx&shareUuid=e4af9e2576f742518d31de9d38c34b14
+大牌强联合 好物提前购
+10-28 ~ 11~5
+https://lzdz1-isv.isvjcloud.com/dingzhi/dz/openCard/activity?activityId=946hf38m5d4vqjgs5ctfuickj65s69l528&shareUuid=f0a85730507a4ebcbd28162be46fc8f6
 
 默认执行脚本。如果需要不执行
 环境变量 NO_RUSH=false
 */
-const $ = new Env("大牌联合  狂欢抢先GO");
+const $ = new Env("大牌强联合 好物提前购");
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [], cookie = '', message = '';
