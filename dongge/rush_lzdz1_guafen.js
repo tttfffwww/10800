@@ -239,8 +239,6 @@ function task(function_id, body, isCommon = 0, own = 0) {
                         } else {
                             // $.log(JSON.stringify(data))
                         }
-                    } else {
-                        // $.log("京东没有返回数据")
                     }
                 }
             } catch (error) {
