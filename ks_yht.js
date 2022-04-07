@@ -1,5 +1,5 @@
 /*
-IOS/安卓： 快手极速版
+IOS/安卓：  快手极速版
 亿慧通：https://t.me/+WfwxhLeHEAZmNDg1
 
 去除授权破解版2022年4-7日
