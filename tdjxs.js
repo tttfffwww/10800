@@ -115,7 +115,6 @@ let djxsCookies = "",djxsReferers= ""
                 $.index = k + 1;
                 console.log(`\n开始【得间小说${$.index}】`)
                 
-                await djxsqd()
 				await accountInfo()
 				
 				await $.wait(2000)
@@ -153,52 +152,6 @@ function djxsck() {
 
     }
 }
-
-
-
-//签到
-function djxsqd(timeout = 0) {
-    return new Promise((resolve) => {
-        const hd ={"Accept": "*/*",
-        "Accept-Encoding": "gzip, deflate, br",
-        "Accept-Language": "zh-cn",
-        "Connection": "keep-alive",
-        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
-        "Cookie": djxsCookie,
-        "Host": "dj.palmestore.com",
-        "Referer": djxsReferer,
-        "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 14_4_1 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Mobile/15E148",
-        "X-Requested-With": "XMLHttpRequest"}
-        dreferfer=djxsReferer.match(/index?(\S.+)/)[1]
-        let url = {
-            url: `https://dj.palmestore.com/zycl/gold/index?source=welfare&zyeid=91fe2073-7e24-439e-8002-ea7374fac8f4&usr=j55486696&rgt=7&p1=YQLmH91tzvkDALp62TnU1%2Byu&ku=j55486696&kt=fde74e56004342e7d2df9520b0157ac2&pc=10&p2=135313&p3=17402056&p4=501656&p5=19&p6=&p7=__fe4a190b1b90d362&p9=2&p12=&p16=vmos&p21=3&p22=7.1.2&p25=17402256&p26=25&p28=&p30=&p31=__fe4a190b1b90d362&firm=Redmi&pca=channel-visit`,
-            headers: hd,
-
-        }
-        $.get(url, async (err, resp, data) => {
-            try {
-
-                const result = JSON.parse(data)
-
-                if (result.code == 0) {
-                    console.log(`【签到】：${result.msg}\n`)
-                    console.log(`【获得金币】：${banner.bubbles.panel}\n`)
-                    await $.wait(12000)
-
-                } else {
-                    console.log(`【签到失败】：${result.msg}\n`)
-
-                }
-            } catch (e) {
-
-            } finally {
-
-                resolve()
-            }
-        }, timeout)
-    })
-}
-
 
 
 //https://dj.palmestore.com/zyuc/api/user/accountInfo?idfa=32E16C8B-150A-4476-8544-BEAB88725B1A&jailbreak=1&kt=473295f68b845118cda6d30bdee5a5d4&ku=j55085537&p1=4A636FDE6ED943C082D487500879236E&p11=584&p12=&p16=iPhone10,1&p2=126001&p21=31303&p22=iOS,12.0&p25=14040260&p3=17142460&p4=501660&p5=1001&p6=AAAAAAAAAAAAAAAAAAAA&p7=AAAAAAAAAAAAAAA&p9=0&pc=10&rgt=7&usr=j55085537&zyeid=a587911c-ec93-4679-be68-3dc2e8da632e&usr=j55085537&sign=bPajNhVpUhn/B0ysXy/ZvPXh2TU+I8DvuWxku02FU0e0jNPJ162/MXILhBKk4p/8TGwnvU63TrGfptttWGjlghV/UzdHBRsyXH2ngg2Bpimv7/vlU0nXAjTYvLXkd0c6Y4bNsJoyUXFCThBWqMiu34Ujbx9rNwXd36CwHQz0zLc=&timestamp=1637118919.757209
