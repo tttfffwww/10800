@@ -33,7 +33,7 @@ const logDebug = 0
 let notifyStr = ''
 let rndtime = "" //毫秒
 let httpResult //global buffer
-let host = 'lq.toutiaoapi.com'
+let host = 'i.snssdk.com'
 let hostname = 'https://' + host
 let userAgent = ($.isNode() ? process.env.jrttjsbUA : $.getdata('jrttjsbUA')) || 'Dalvik/2.1.0 (Linux; U; Android 12; Redmi K30 Pro Zoom Edition Build/SKQ1.211006.001) NewsArticle/8.7.5 cronet/TTNetVersion:f2a033a5 2021-11-02 QuicVersion:705d0b81 2021-08-12';
 let userAgentArr = []
