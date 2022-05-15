@@ -4,7 +4,7 @@
 安卓貌似需要root才能捉到包，IOS随便捉
 多账号切换账号不能退出登录
 
-手动捉包把PPU=UID=xxxx&UN=yyyy&...填到wbtcCookie里，多账号换行隔开
+手动捉包把PPU=UID=xxxx&UN=yyyy&...填到wbtcCookie里，多账号@隔开
 注意前面有个PPU=，捉包只有UID=xxx的话手动加上
 
 自定义UA：填到wbtcUA里，不填默认IOS15的UA
@@ -104,9 +104,9 @@ class UserInfo {
     }
     
     async doTask(sceneId,taskId) {
-        let time = (new Date()).getTime()
-        let sign = MD5Encrypt(`${time}${taskId}`)
-        let url = `https://taskframe.58.com/web/task/dotask?timestamp=${(new Date()).getTime()}&sign=${sign}&taskId=${taskId}`//&taskData=15`
+        var time = `${(new Date()).getTime()}`
+        var signo = `${time}${taskId}`
+        let url = `https://taskframe.58.com/web/task/dotask?timestamp=${time}&sign=${MD5Encrypt(signo)}&taskId=${taskId}`//&taskData=15`
         let body = ``
         let urlObject = populateUrlObject(url,this.cookie,body)
         await httpRequest('get',urlObject)
@@ -121,9 +121,9 @@ class UserInfo {
     }
     
     async getReward(sceneId,taskId) {
-        let time = (new Date()).getTime()
-        let sign = MD5Encrypt(`${time}${taskId}`)
-        let url = `https://taskframe.58.com/web/task/reward?timestamp=${(new Date()).getTime()}&sign=${sign}&taskId=${taskId}`
+        var time = `${(new Date()).getTime()}`
+        var signo = `${time}${taskId}`
+        let url = `https://taskframe.58.com/web/task/reward?timestamp=${time}&sign=${MD5Encrypt(signo)}&taskId=${taskId}`
         let body = ``
         let urlObject = populateUrlObject(url,this.cookie,body)
         await httpRequest('get',urlObject)
@@ -322,7 +322,7 @@ class UserInfo {
                     await $.wait(500)
                     await this.oreGameScore()
                 }
-                console.log(`账号[${this.index}]神奇矿余额${this.ore.ore} ≈ ${this.ore.money.toFixed(2)}元`)
+                console.log(`账号[${this.index}]神奇矿余额${this.ore.ore} ≈ ${this.ore.money}元`)
             }
         } else {
             console.log(`账号[${this.index}]查询神奇矿主页失败: ${result.message}`)
@@ -726,7 +726,7 @@ class UserInfo {
 ///////////////////////////////////////////////////////////////////
 async function checkEnv() {
     if(userCookie) {
-        for(let userCookies of userCookie.split('\n')) {
+        for(let userCookies of userCookie.split('@')) {
             if(userCookies) userList.push(new UserInfo(userCookies))
         }
         userCount = userList.length
