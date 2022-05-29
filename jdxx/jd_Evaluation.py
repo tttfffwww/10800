@@ -24,7 +24,7 @@ Ev_xing = '5'
 import os, random, re, sys, time
 from urllib.parse import unquote
 # noinspection PyUnresolvedReferences
-from sendNotify import send
+
 
 try:
     import requests
@@ -522,7 +522,7 @@ def start():
     msg = ''
     for i in Cent:
         msg += f'{i}\n{Cent[i]}\n\n'
-    send('京东全自动评价', msg)
+    #send('京东全自动评价', msg)
 
 
 if __name__ == '__main__':
