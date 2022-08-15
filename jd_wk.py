@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*
 '''
 定时自定义
-2 10 20 5 * jd_wskey.py
-new Env('wskey转换');
+2 10 20 5 * jd_wk.py
+new Env('wk转');
 '''
 import socket  # 用于端口检测
 import base64  # 用于编解码
